@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>차량 확인</title>
+</head>
+<body>
+
+<img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
+
+    <h1>차량번호 입력</h1>
+
+    <form method="POST" action="/check">
+        <label for="car_number">차량번호:</label>
+        <input type="text" id="car_number" name="car_number" required>
+        <button type="submit">확인</button>
+    </form>
+</body>
+</html>
