@@ -52,14 +52,16 @@
     <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
 
     <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
-    <p><strong>   팀명:</strong> {{ team_name }}</p>
-    <p><strong>   참가일:</strong> {{ participation_date }}</p>
+    <p><strong>팀명:</strong> {{ team_name }}</p>
+    <p><strong>참가일:</strong> {{ participation_date }}</p>
 
     <p style="font-size: 1.5em; font-weight: bold; color: #d63031;">
-    <p><strong>🚗 차량번호:</strong> {{ car_number }}
+        🚗 차량번호: {{ car_number }}
     </p>
+    
     <p style="font-size: 1.5em; font-weight: bold; color: #d63031;">
-    <p>오늘 축제를 멋지게 빛내 주세요!</p>
+        오늘 축제를 멋지게 빛내 주세요!
+    </p>
 
 </body>
 </html>
