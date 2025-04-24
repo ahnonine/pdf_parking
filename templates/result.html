@@ -28,41 +28,4 @@
 
         p {
             margin: 10px 0;
-            font-size: 1.2em;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 18px;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-        }
-    </style> <!-- ← 요거 닫는 태그가 추가됐어요 -->
-</head>
-<body>
-
-    <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
-
-    <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
-    <p><strong>팀명:</strong> {{ team_name }}</p>
-    <p><strong>참가일:</strong> {{ participation_date }}</p>
-
-    <p style="font-size: 1.5em; font-weight: bold; color: #d63031;">
-        🚗 차량번호: {{ car_number }}
-    </p>
-    
-    <p style="animation: sparkle 1.5s infinite alternate; font-weight: bold;">
-        ✨ 오늘 축제를 멋지게 빛내 주세요! ✨
-    </p>
-
-
-</body>
-</html>
+            font-size: 1.2em
