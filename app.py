@@ -8,7 +8,7 @@ data = [
     {"차량번호": "1234", "이름": "홍길동", "팀명": "팀 A"},
     {"차량번호": "5678", "이름": "김철수", "팀명": "팀 B"}
 ]
-df = pd.read_csv("data.csv", encoding="euc-kr") 
+df = pd.read_csv('data.csv', encoding='utf-8')
 
 @app.route('/')
 def index():
