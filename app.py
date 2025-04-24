@@ -3,11 +3,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# 예시 데이터 (CSV 대신 사용할 수 있음)
-data = [
-    {"차량번호": "1234", "이름": "홍길동", "팀명": "팀 A"},
-    {"차량번호": "5678", "이름": "김철수", "팀명": "팀 B"}
-]
+# CSV에서 데이터 읽기
 df = pd.read_csv('data.csv', encoding='utf-8')
 
 @app.route('/')
@@ -24,7 +20,8 @@ def check():
     if not match.empty:
         user_name = match.iloc[0]['이름']
         team_name = match.iloc[0]['팀명']
-        return render_template('result.html', user_name=user_name, team_name=team_name, car_number=car_number)
+        participation_date = match.iloc[0]['참가일']  # 참가일 추가
+        return render_template('result.html', user_name=user_name, team_name=team_name, car_number=car_number, participation_date=participation_date)
     else:
         return "등록된 차량번호가 없습니다. 다시 시도해주세요."
 
