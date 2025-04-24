@@ -23,7 +23,7 @@ def check():
         participation_date = match.iloc[0]['참가일']  # 참가일 추가
         return render_template('result.html', user_name=user_name, team_name=team_name, car_number=car_number, participation_date=participation_date)
     else:
-        return "등록된 차량번호가 없습니다. 다시 시도해주세요."
+        return render_template('error.html')  # 메시지를 별도 페이지로 보여줌
 
 if __name__ == '__main__':
     app.run(debug=True, port=5050)
