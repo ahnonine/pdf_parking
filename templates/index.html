@@ -2,48 +2,58 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>환영합니다!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 최적화 -->
+    <title>차량 확인</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
             font-size: 20px;
-            background-color: #ffffff;
-            text-align: center;
-            padding: 30px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
             margin: 0;
-            color: #333;
+            background-color: #f9f9f9;
         }
-
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
         img {
             max-width: 100%;
             height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        form {
+            text-align: center;
             margin-bottom: 20px;
         }
-
-        h1 {
-            font-size: 2.2em;
-            color: #0a3d62;
+        label, input, button {
+            font-size: 20px;
         }
-
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #e74c3c; /* 빨간색 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c0392b; /* 더 진한 빨간색 */
+        }
         p {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
-
-        @media (max-width: 600px) {
-            body {
-                font-size: 18px;
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 1.8em;
-            }
-
-            p {
-                font-size: 1em;
-            }
+            text-align: center;
+            color: #333;
         }
     </style>
 </head>
@@ -51,17 +61,15 @@
 
     <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
 
-    <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
-    <p><strong>팀명:</strong> {{ team_name }}</p>
-    <p><strong>참가일:</strong> {{ participation_date }}</p>
+    <h1>차량번호 입력🧑🏻‍🚀</h1>
 
-    <p style="font-size: 1.5em; font-weight: bold; color: #d63031;">
-        🚗 차량번호: {{ car_number }}
-    </p>
+    <form method="POST" action="/check">
+        <label for="car_number">차량번호:</label><br>
+        <input type="text" id="car_number" name="car_number" required><br>
+        <button type="submit">확인</button>
+    </form>
     
-    <p style="font-size: 1.5em; font-weight: bold; color: #d63031;">
-        오늘 축제를 멋지게 빛내 주세요!
-    </p>
+    <p>💡 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
 
 </body>
 </html>
