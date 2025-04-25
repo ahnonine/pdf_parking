@@ -11,25 +11,35 @@
             line-height: 1.6;
             padding: 20px;
             margin: 0;
-            background-color: #ffffff;
+            background-image: url("{{ url_for('static', filename='images/background.image.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
         }
+
         h1 {
             font-size: 28px;
             text-align: center;
+            color: black;
         }
+
         img {
             max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto 20px;
         }
+
         form {
             text-align: center;
             margin-bottom: 20px;
         }
+
         label, input, button {
             font-size: 20px;
         }
+
         input[type="text"] {
             padding: 10px;
             width: 80%;
@@ -39,6 +49,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         button {
             padding: 10px 20px;
             font-size: 20px;
@@ -48,12 +59,19 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         button:hover {
             background-color: #781717; /* 더 진한 빨간색 */
         }
+
         p {
             text-align: center;
-            color: #333;
+            color: black;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.7); /* 반투명 배경으로 가독성 향상 */
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
         }
     </style>
 </head>
