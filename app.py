@@ -18,12 +18,16 @@ def check():
     match = df[df['차량번호'] == car_number]
     
     if not match.empty:
-        user_name = match.iloc[0]['이름']
         team_name = match.iloc[0]['팀명']
-        participation_date = match.iloc[0]['참가일']  # 참가일 추가
-        return render_template('result.html', user_name=user_name, team_name=team_name, car_number=car_number, participation_date=participation_date)
+        participation_date = match.iloc[0]['참가일']  # 참가일 유지
+        return render_template(
+            'result.html',
+            team_name=team_name,
+            car_number=car_number,
+            participation_date=participation_date
+        )
     else:
-        return render_template('error.html')  # 메시지를 별도 페이지로 보여줌
+        return render_template('error.html')  # 일치하는 차량 없을 때
 
 if __name__ == '__main__':
     app.run(debug=True, port=5050)
