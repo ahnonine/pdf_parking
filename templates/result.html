@@ -12,6 +12,16 @@
         color: #333;
     }
 
+    /* 전체 콘텐츠를 반투명 배경에 담아 가독성 향상 */
+    .content-box {
+        background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색 */
+        padding: 20px;
+        border-radius: 15px;
+        display: inline-block;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
     img {
         max-width: 100%;
         height: auto;
@@ -40,6 +50,10 @@
 
         p {
             font-size: 1em;
+        }
+
+        .content-box {
+            padding: 15px;
         }
     }
 </style>
