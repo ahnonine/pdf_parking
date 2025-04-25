@@ -2,18 +2,90 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 모바일 최적화 -->
     <title>차량 확인</title>
+    <style>
+        body {
+            font-size: 20px;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+           background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            color: black;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label, input, button {
+            font-size: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #a31d1d; /* 빨간색 */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #781717; /* 더 진한 빨간색 */
+        }
+
+        p {
+            text-align: center;
+            color: black;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.7); /* 반투명 배경으로 가독성 향상 */
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
-
-    <h1>차량번호 입력</h1>
+    <h1>차량번호 입력🧑🏻‍🚀</h1>
 
     <form method="POST" action="/check">
-        <label for="car_number">차량번호:</label>
-        <input type="text" id="car_number" name="car_number" required>
+        <label for="car_number">차량번호:</label><br>
+        <input type="text" id="car_number" name="car_number" required><br>
         <button type="submit">확인</button>
     </form>
+    
+    <p>💡 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
+
 </body>
 </html>

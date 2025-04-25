@@ -1,16 +1,59 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>환영합니다!</title>
-</head>
-<body>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        font-size: 20px;
+        background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        padding: 30px;
+        margin: 0;
+        color: #333;
+    }
 
-<img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
+    /* 전체 콘텐츠를 반투명 배경에 담아 가독성 향상 */
+    .content-box {
+        background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색 */
+        padding: 20px;
+        border-radius: 15px;
+        display: inline-block;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-    <h1>환영합니다, {{ user_name }} 님! 🎉</h1>
-    <p><strong>팀명:</strong> {{ team_name }}</p>
-    <p><strong>차량번호:</strong> {{ car_number }}</p>
-    <p>참가해 주셔서 감사합니다!</p>
-</body>
-</html>
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        color: #0a3d62;
+    }
+
+    p {
+        margin: 10px 0;
+        font-size: 1.2em;
+    }
+
+    @media (max-width: 600px) {
+        body {
+            font-size: 18px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        .content-box {
+            padding: 15px;
+        }
+    }
+</style>
