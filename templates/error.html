@@ -7,20 +7,36 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #ffffff;
+            background-image: url("{{ url_for('static', filename='images/background.image.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             text-align: center;
             padding: 50px;
-            color: #000000; 
+            margin: 0;
+            color: #000000;
         }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색 배경 */
+            display: inline-block;
+            padding: 30px 40px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin-top: 30px;
+        }
+
         h1 {
             font-size: 30px;
-            color: #000000; 
+            color: #000000;
         }
+
         p {
             font-size: 20px;
             margin-top: 20px;
-            color: #000000; 
+            color: #000000;
         }
+
         a {
             display: inline-block;
             margin-top: 30px;
@@ -30,17 +46,10 @@
             text-decoration: none;
             border-radius: 5px;
         }
+
         a:hover {
             background-color: #781717;
         }
-    </style>
-</head>
-<body>
-     <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
 
-    <h1>🚫 등록된 차량번호가 없습니다.</h1>
-    <p>다시 입력해 주세요.</p>
-    <a href="/">돌아가기</a>
-    <p>💡차량번호는 '111가1111'처럼 띄어쓰기 없이 입력해주세요.</p>
-</body>
-</html>
+        img {
+            max-width: 100
