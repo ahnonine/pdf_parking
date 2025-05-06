@@ -8,7 +8,6 @@
     body {
       font-size: 20px;
       font-family: 'Arial', sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
       background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
@@ -19,13 +18,33 @@
 
     .container {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       min-height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
+      padding: 40px 20px;
     }
 
+    /* 🔼 주차 버튼 (외부 상단) */
+    .top-button-outside {
+      margin-bottom: 20px;
+    }
+
+    .top-button-outside a.button {
+      background-color: #000000;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
+
+    .top-button-outside a.button:hover {
+      background-color: #333333;
+    }
+
+    /* 🔽 차량번호 박스 */
     .content {
       background-color: rgba(255, 255, 255, 0.7);
       padding: 30px;
@@ -36,26 +55,6 @@
       box-sizing: border-box;
     }
 
-    /* 🅿️ 주차 버튼 스타일 */
-    .top-button {
-      margin-bottom: 20px;
-    }
-
-    .top-button a.button {
-      background-color: #000000;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-    }
-
-    .top-button a.button:hover {
-      background-color: #333333;
-    }
-
-    /* 타이틀 */
     h1 {
       font-size: 28px;
       color: #333;
@@ -94,7 +93,6 @@
       background-color: #333333;
     }
 
-    /* 퍼레이드 섹션 */
     .parade-section {
       margin-top: 30px;
     }
@@ -127,7 +125,7 @@
     }
 
     @media (max-width: 768px) {
-      .content, .top-button a.button, .parade-buttons a {
+      .content, .top-button-outside a.button, .parade-buttons a {
         width: 90%;
       }
     }
@@ -136,14 +134,14 @@
 <body>
 
   <div class="container">
+    
+    <!-- 🔼 차량박스 외부 위에 있는 주차 버튼 -->
+    <div class="top-button-outside">
+      <a href="/parking" class="button">🅿️ 주차 및 하역장소</a>
+    </div>
+
+    <!-- 🔽 차량번호 입력 박스 -->
     <div class="content">
-
-      <!-- 🔼 주차 및 하역장소 버튼 -->
-      <div class="top-button">
-        <a href="/parking" class="button">🅿️ 주차 및 하역장소</a>
-      </div>
-
-      <!-- 차량번호 입력 -->
       <h1>차량번호 입력 🧑🏻‍🚀</h1>
 
       <form method="POST" action="/check">
@@ -154,7 +152,6 @@
 
       <p>💡 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
 
-      <!-- 🔽 퍼레이드 순서표 버튼 -->
       <div class="parade-section">
         <h2>📋 퍼레이드 순서표</h2>
         <div class="parade-buttons">
@@ -163,8 +160,8 @@
           <a href="/schedule/wonderful">원더풀퍼레이드</a>
         </div>
       </div>
-
     </div>
+
   </div>
 
 </body>
