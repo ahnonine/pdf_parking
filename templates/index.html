@@ -9,8 +9,8 @@
       font-size: 20px;
       font-family: 'Arial', sans-serif;
       line-height: 1.6;
-      padding: 0;
       margin: 0;
+      padding: 0;
       background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
       background-size: cover;
       background-position: center;
@@ -19,11 +19,21 @@
 
     .container {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
       min-height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
-      padding: 30px 20px;
+      padding: 20px;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
     }
 
     .top-button {
@@ -44,23 +54,13 @@
       background-color: #781717;
     }
 
-    .content {
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
     h1 {
       font-size: 28px;
       color: #333;
     }
 
     form {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     label, input, button {
@@ -133,14 +133,14 @@
 <body>
 
   <div class="container">
-
-    <!-- 상단 주차 버튼 -->
-    <div class="top-button">
-      <a href="/parking" class="button">🅿️ 주차 및 하역장소</a>
-    </div>
-
-    <!-- 차량번호 입력 폼 -->
     <div class="content">
+
+      <!-- 🔼 주차 및 하역장소 버튼 -->
+      <div class="top-button">
+        <a href="/parking" class="button">🅿️ 주차 및 하역장소</a>
+      </div>
+
+      <!-- 차량번호 입력 영역 -->
       <h1>차량번호 입력 🧑🏻‍🚀</h1>
 
       <form method="POST" action="/check">
@@ -151,7 +151,7 @@
 
       <p>💡 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
 
-      <!-- 퍼레이드 버튼 섹션 -->
+      <!-- 🔽 퍼레이드 순서표 버튼 그룹 -->
       <div class="parade-section">
         <h2>📋 퍼레이드 순서표</h2>
         <div class="parade-buttons">
@@ -162,7 +162,6 @@
       </div>
 
     </div>
-
   </div>
 
 </body>
