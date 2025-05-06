@@ -29,29 +29,24 @@ def check():
             participation_date=participation_date
         )
     else:
-        return render_template('error.html')  # 일치 차량 없음
+        return render_template('error.html')
 
-# 🔽 추가된 라우트들
+# 퍼레이드 순서표 및 주차 안내 페이지 라우트 추가
+@app.route('/parking')
+def parking():
+    return render_template('parking.html')
 
-# 파워풀퍼레이드 (토)
 @app.route('/schedule/sat')
 def schedule_sat():
     return render_template('schedule_sat.html')
 
-# 파워풀퍼레이드 (일)
 @app.route('/schedule/sun')
 def schedule_sun():
     return render_template('schedule_sun.html')
 
-# 원더풀퍼레이드
 @app.route('/schedule/wonderful')
 def schedule_wonderful():
     return render_template('schedule_wonderful.html')
-
-# 주차 및 하역장소
-@app.route('/parking')
-def parking():
-    return render_template('parking.html')
 
 # 서버 실행
 if __name__ == '__main__':
