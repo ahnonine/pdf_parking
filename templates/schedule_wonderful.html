@@ -21,13 +21,16 @@
         }
 
         a.button {
-            margin-top: 30px;
             display: inline-block;
+            margin-top: 30px;
             padding: 10px 20px;
+            font-size: 1em;
             background-color: #a31d1d;
             color: white;
+            border: none;
             border-radius: 5px;
             text-decoration: none;
+            transition: background-color 0.3s ease;
         }
 
         a.button:hover {
@@ -36,7 +39,7 @@
     </style>
 </head>
 <body>
-    <h1 원더풀퍼레이드 순서표</h1>
+    <h1>🌟 원더풀퍼레이드 순서표</h1>
     <img src="{{ url_for('static', filename='images/schedule_wonderful.jpg') }}" alt="원더풀퍼레이드 순서표">
     <br>
     <a href="/" class="button">돌아가기</a>
