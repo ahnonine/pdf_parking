@@ -14,7 +14,7 @@ def check():
 
     # ✅ 특정 차량번호 입력 시 별도 페이지로 이동
     if car_number == '05저7845':
-        return render_template('special.html', car_number=05저784)
+        return render_template('special.html', car_number=car_number)
 
     match = df[df['차량번호'] == car_number]
 
