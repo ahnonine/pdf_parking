@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>환영합니다!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            font-size: 20px;
-            background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            text-align: center;
-            padding: 30px;
-            margin: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <title>환영합니다!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+      background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: #333;
+    }
 
-        .content-box {
-            background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색 */
-            padding: 20px;
-            border-radius: 15px;
-            display: inline-block;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+    }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
+    .content-box {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
 
-        h1 {
-            font-size: 2.2em;
-            color: #0a3d62;
-        }
+    h1 {
+      font-size: 2.2em;
+      color: #0a3d62;
+    }
 
-        p {
-            margin: 10px 0;
-            font-size: 1.2em;
-        }
+    p {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
 
-        @media (max-width: 600px) {
-            body {
-                font-size: 18px;
-                padding: 20px;
-            }
+    @media (max-width: 600px) {
+      body {
+        font-size: 18px;
+        padding: 0;
+      }
 
-            h1 {
-                font-size: 1.8em;
-            }
+      h1 {
+        font-size: 1.8em;
+      }
 
-            p {
-                font-size: 1em;
-            }
+      p {
+        font-size: 1em;
+      }
 
-            .content-box {
-                padding: 15px;
-            }
-        }
-    </style>
+      .content-box {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <div class="container">
     <div class="content-box">
-        <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
+      <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
+      <p><strong>팀명:</strong> {{ team_name }}</p>
+      <p><strong>참가일:</strong> {{ participation_date }}</p>
 
-        <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
-        <p><strong>팀명:</strong> {{ team_name }}</p>
-        <p><strong>참가일:</strong> {{ participation_date }}</p>
+      <p style="font-size: 1.5em; font-weight: bold; color: black; margin-top: 20px;">
+        차량번호: {{ car_number }}
+      </p>
 
-        <p style="font-size: 1.5em; font-weight: bold; color: black; margin-top: 20px;">
-            차량번호: {{ car_number }}
-        </p>
-
-        <p style="margin-top: 40px;">오늘 축제를 멋지게 빛내 주세요!</p>
+      <p style="margin-top: 40px;">오늘 축제를 멋지게 빛내 주세요!</p>
     </div>
+  </div>
 
 </body>
 </html>
