@@ -2,170 +2,107 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>차량 확인</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-size: 20px;
-      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Arial', sans-serif;
       background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+      color: white;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       min-height: 100vh;
       background-color: rgba(0, 0, 0, 0.5);
       padding: 40px 20px;
+      text-align: center;
     }
 
-    /* 🔼 주차 버튼 (외부 상단, 검정색) */
-    .top-button-outside {
-      margin-bottom: 20px;
-    }
-
-    .top-button-outside a.button {
-      background-color: #000000;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-    }
-
-    .top-button-outside a.button:hover {
-      background-color: #333333;
-    }
-
-    /* 🔽 박스 */
-    .content {
-      background-color: rgba(255, 255, 255, 0.7);
+    .content-box {
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 30px;
-      border-radius: 10px;
+      border-radius: 15px;
       max-width: 500px;
       width: 100%;
-      text-align: center;
-      box-sizing: border-box;
     }
 
     h1 {
-      font-size: 28px;
-      color: #333;
-    }
-
-    form {
-      margin-top: 10px;
-    }
-
-    label, input, button {
-      font-size: 20px;
+      font-size: 1.8em;
+      margin-bottom: 20px;
     }
 
     input[type="text"] {
       padding: 10px;
       width: 80%;
-      max-width: 400px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
       border-radius: 5px;
+      border: none;
+      font-size: 1.1em;
+      margin-bottom: 15px;
     }
 
-    /* ✅ 차량번호 확인 버튼: 붉은색 */
     button {
-      padding: 10px 20px;
-      font-size: 1em;
       background-color: #a31d1d;
       color: white;
       border: none;
+      padding: 10px 20px;
+      font-size: 1em;
       border-radius: 5px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    button:hover {
-      background-color: #781717;
+    .info-text {
+      font-size: 0.95em;
+      margin-top: 15px;
+      color: #ddd;
     }
 
-    .parade-section {
-      margin-top: 30px;
-    }
-
-    .parade-section h2 {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    /* ✅ 퍼레이드 버튼: 검정색 */
-    .parade-buttons {
+    .extra-buttons {
+      margin-top: 25px;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      align-items: center;
     }
 
-    .parade-buttons a {
-      padding: 8px 15px;
-      font-size: 0.9em;
-      background-color: #000000;
+    .extra-buttons a {
+      background-color: #000;
       color: white;
-      border-radius: 5px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 5px;
     }
 
-    .parade-buttons a:hover {
-      background-color: #333333;
-    }
-
-    @media (max-width: 768px) {
-      .content, .top-button-outside a.button, .parade-buttons a {
-        width: 90%;
-      }
+    .extra-buttons a:hover {
+      background-color: #333;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    
-    <!-- 🔼 검정색 주차 버튼 -->
-    <div class="top-button-outside">
-      <a href="/parking" class="button">🅿️ 주차 및 하역장소</a>
-    </div>
-
-    <!-- 차량번호 입력 박스 -->
-    <div class="content">
-      <h1>차량번호 입력 🧑🏻‍🚀</h1>
-
+    <div class="content-box">
+      <h1>차량번호 입력🧑🏻‍🚀</h1>
       <form method="POST" action="/check">
-        <label for="car_number">차량번호:</label><br>
-        <input type="text" id="car_number" name="car_number" required><br>
+        <input type="text" name="car_number" placeholder="예: 12가3456" required>
+        <br>
         <button type="submit">확인</button>
       </form>
+      <p class="info-text">💡 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
 
-      <p>💡 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
-
-      <!-- 퍼레이드 순서표 -->
-      <div class="parade-section">
-        <h2>📋 퍼레이드 순서표</h2>
-        <div class="parade-buttons">
-          <a href="/schedule/sat">파워풀퍼레이드 (토)</a>
-          <a href="/schedule/sun">파워풀퍼레이드 (일)</a>
-          <a href="/schedule/wonderful">원더풀퍼레이드</a>
-        </div>
+      <div class="extra-buttons">
+        <a href="/parking">🅿️ 주차 및 하역장소 안내</a>
+        <a href="/schedule/sat">📋 파워풀퍼레이드 (토)</a>
+        <a href="/schedule/sun">📋 파워풀퍼레이드 (일)</a>
+        <a href="/schedule/wonderful">📋 원더풀퍼레이드</a>
       </div>
     </div>
-
   </div>
-
 </body>
 </html>
