@@ -12,11 +12,7 @@ def index():
 def check():
     car_number = request.form['car_number'].strip()
 
-   @app.route('/check', methods=['POST'])
-def check():
-    car_number = request.form['car_number'].strip()
-
-    # ✅ 특정 차량번호 처리
+    # 특정 차량번호에 대한 처리
     if car_number == '05저7845':
         team_name = '40대아저씨재롱보러어제서울갔다온30대아저씨'
         participation_date = '5월 11일(일)'
@@ -26,7 +22,7 @@ def check():
             car_number=car_number,
             participation_date=participation_date
         )
-        
+
     match = df[df['차량번호'] == car_number]
 
     if not match.empty:
