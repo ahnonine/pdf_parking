@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>오류</title>
+  <title>환영합니다!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -35,16 +35,16 @@
     }
 
     h1 {
-      font-size: 1.6em;
+      font-size: 1.8em;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       margin: 10px 0;
     }
 
-    a.button {
+    .button {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
@@ -53,20 +53,35 @@
       text-decoration: none;
       border-radius: 5px;
       font-size: 1em;
+      transition: background-color 0.3s ease;
     }
 
-    a.button:hover {
+    .button:hover {
       background-color: #781717;
+    }
+
+    .car-number {
+      font-size: 1.3em;
+      font-weight: bold;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="content-box">
-      <h1>🚫 등록된 차량번호가 없습니다.</h1>
-      <p>다시 입력해 주세요.</p>
-      <p>💡 차량번호는 '111가1111'처럼 띄어쓰기 없이 입력해주세요.</p>
-      <a href="/" class="button">돌아가기</a>
+      <h1>🎉 환영합니다 🎉</h1>
+      <p>{{ user_name }} 님!</p>
+      <p>참가일: {{ participation_date }}</p>
+
+      <!-- 돌아가기 버튼 -->
+      <a href="/" class="button">다시 입력해주세요</a>
+
+      <!-- 차량번호는 버튼 아래 두 칸 아래에 표시 -->
+      <p class="car-number">차량번호: {{ car_number }}</p>
+
+      <p style="margin-top: 20px;">오늘 축제를 멋지게 빛내 주세요!</p>
     </div>
   </div>
 </body>
