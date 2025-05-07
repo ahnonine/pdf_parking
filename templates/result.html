@@ -14,7 +14,7 @@
       background-position: center;
       background-attachment: fixed;
       color: white;
-      font-size: 1.3em;
+      font-size: 1.4em; /* 🔼 폰트 전체 1pt 증가 */
     }
 
     .container {
@@ -42,38 +42,43 @@
 
     p {
       margin: 10px 0;
+      font-size: 1.2em;
     }
 
     .bold {
       font-weight: bold;
     }
 
-    .spacing-1 {
-      margin-top: 15px;
-    }
-
     .spacing-2 {
       margin-top: 30px;
+    }
+
+    .spacing-3 {
+      margin-top: 45px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="content-box">
-<h1 style="white-space: nowrap;">
-  <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
-  <span style="margin: 0 8px;">환영합니다</span>
-  <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
-</h1>
 
+      <!-- 환영합니다 문구 (모바일 최적화된 이모지) -->
+      <h1 style="white-space: nowrap;">
+        <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
+        <span style="margin: 0 8px;">환영합니다</span>
+        <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
+      </h1>
+
+      <!-- 팀명 -->
       <p class="bold spacing-2">{{ team_name }} 님!</p>
 
-      <div class="spacing-1">
-        <p class="bold">차량번호: {{ car_number }}</p>
-        <p class="bold">참가일: {{ participation_date }}</p>
-      </div>
+      <!-- 차량번호와 참가일: 팀명에서 두 칸 아래 -->
+      <p class="bold" style="margin-top: 30px;">차량번호: {{ car_number }}</p>
+      <p class="bold">참가일: {{ participation_date }}</p>
 
-      <p class="spacing-2">오늘 축제를 멋지게 빛내 주세요!</p>
+      <!-- 안내 문구: 참가일에서 세 칸 아래 -->
+      <p class="spacing-3">오늘 축제를 멋지게 빛내 주세요!</p>
+
     </div>
   </div>
 </body>
