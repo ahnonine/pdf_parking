@@ -35,35 +35,34 @@
     }
 
     h1 {
-      font-size: 1.6em;
+      font-size: 1.6em; /* 제목은 그대로 유지 */
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.1em;
+      font-size: 1.2em; /* 🔼 1pt 증가 */
       margin: 10px 0;
     }
 
     a.button {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 15px; /* 🔼 한 칸 간격 */
       padding: 10px 20px;
       background-color: #a31d1d;
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-size: 1em;
+      font-size: 1.1em; /* 🔼 1pt 증가 */
     }
 
     a.button:hover {
       background-color: #781717;
     }
 
-    .car-number {
-      margin-top: 40px;
-      font-weight: bold;
-      font-size: 1.1em;
-      color: white;
+    .notice {
+      margin-top: 30px; /* 🔼 버튼에서 두 칸 간격 */
+      font-size: 1.2em; /* 🔼 1pt 증가 */
+      color: #eee;
     }
   </style>
 </head>
@@ -73,10 +72,9 @@
       <h1>🚫 등록된 차량번호가 없습니다.</h1>
       <p>다시 입력해 주세요.</p>
 
-      <!-- 버튼을 문장 바로 아래로 -->
-      <a href="/" class="button">돌아가기</a
+      <a href="/" class="button">돌아가기</a>
 
-      <p style="margin-top: 20px;">💡 차량번호는 '111가1111'처럼 띄어쓰기 없이 입력해주세요.</p>
+      <p class="notice">💡 차량번호는 '111가1111'처럼 띄어쓰기 없이 입력해주세요.</p>
     </div>
   </div>
 </body>
