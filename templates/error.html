@@ -6,19 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      font-family: 'Arial', sans-serif;
       background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: black;
+      color: white;
     }
 
     .container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
@@ -27,29 +26,25 @@
     }
 
     .content-box {
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 30px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
       border-radius: 15px;
       max-width: 500px;
       width: 100%;
       text-align: center;
-      box-sizing: border-box;
-      color: black;
     }
 
     h1 {
-      font-size: 1.8em;
+      font-size: 1.6em;
       margin-bottom: 20px;
-      color: black;
     }
 
     p {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      color: black;
+      font-size: 1.1em;
+      margin: 10px 0;
     }
 
-    .button {
+    a.button {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
@@ -58,30 +53,14 @@
       text-decoration: none;
       border-radius: 5px;
       font-size: 1em;
-      transition: background-color 0.3s ease;
     }
 
-    .button:hover {
+    a.button:hover {
       background-color: #781717;
-    }
-
-    @media (max-width: 600px) {
-      .content-box {
-        padding: 20px;
-      }
-
-      h1 {
-        font-size: 1.5em;
-      }
-
-      p, .button {
-        font-size: 1em;
-      }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     <div class="content-box">
       <h1>🚫 등록된 차량번호가 없습니다.</h1>
@@ -90,6 +69,5 @@
       <a href="/" class="button">돌아가기</a>
     </div>
   </div>
-
 </body>
 </html>
