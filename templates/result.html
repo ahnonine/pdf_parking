@@ -6,20 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      font-size: 20px;
       margin: 0;
       padding: 0;
+      font-family: 'Arial', sans-serif;
       background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: black;
+      color: white;
     }
 
     .container {
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
@@ -28,62 +26,34 @@
     }
 
     .content-box {
-      background-color: rgba(255, 255, 255, 0.7);
+      background-color: rgba(0, 0, 0, 0.7);
       padding: 30px;
       border-radius: 15px;
       max-width: 500px;
       width: 100%;
       text-align: center;
-      box-sizing: border-box;
-      color: black;
     }
 
     h1 {
-      font-size: 2.2em;
-      color: black;
+      font-size: 1.8em;
+      margin-bottom: 20px;
     }
 
     p {
-      margin: 10px 0;
       font-size: 1.2em;
-      color: black;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        font-size: 18px;
-        padding: 0;
-      }
-
-      h1 {
-        font-size: 1.8em;
-      }
-
-      p {
-        font-size: 1em;
-      }
-
-      .content-box {
-        padding: 20px;
-      }
+      margin: 10px 0;
     }
   </style>
 </head>
 <body>
-
   <div class="container">
     <div class="content-box">
-      <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
-      <p><strong>팀명:</strong> {{ team_name }}</p>
-      <p><strong>참가일:</strong> {{ participation_date }}</p>
-
-      <p style="font-size: 1.5em; font-weight: bold; color: black; margin-top: 20px;">
-        차량번호: {{ car_number }}
-      </p>
-
-      <p style="margin-top: 40px;">오늘 축제를 멋지게 빛내 주세요!</p>
+      <h1>🎉 환영합니다 🎉</h1>
+      <p>{{ user_name }} 님!</p>
+      <p>차량번호: {{ car_number }}</p>
+      <p>참가일: {{ participation_date }}</p>
+      <p style="margin-top: 20px;">오늘 축제를 멋지게 빛내 주세요!</p>
     </div>
   </div>
-
 </body>
 </html>
