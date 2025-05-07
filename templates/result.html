@@ -14,7 +14,7 @@
       background-position: center;
       background-attachment: fixed;
       color: white;
-      font-size: 1.4em; /* 🔼 폰트 전체 1pt 증가 */
+      font-size: 1.4em;
     }
 
     .container {
@@ -69,15 +69,15 @@
         <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
       </h1>
 
-      <!-- 팀명 -->
-      <p class="bold spacing-2">{{ team_name }} 님!</p>
+      <!-- 팀명 (한 포인트 작게 조정) -->
+      <p class="bold spacing-2" style="font-size: 1.1em;">{{ team_name }} 님!</p>
 
-      <!-- 차량번호와 참가일: 팀명에서 두 칸 아래 -->
+      <!-- 차량번호와 참가일 -->
       <p class="bold" style="margin-top: 30px;">차량번호: {{ car_number }}</p>
       <p class="bold">참가일: {{ participation_date }}</p>
 
-      <!-- 안내 문구: 참가일에서 세 칸 아래 -->
-      <p class="spacing-3">오늘 축제를 멋지게 빛내 주세요!</p>
+      <!-- 안내 문구 (한 포인트 작게 조정) -->
+      <p class="spacing-3" style="font-size: 1.1em;">오늘 축제를 멋지게 빛내 주세요!</p>
 
     </div>
   </div>
