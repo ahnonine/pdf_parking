@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>환영합니다!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+      font-size: 1.4em;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+    }
+
+    .content-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.2em;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .spacing-2 {
+      margin-top: 45px; /* ✅ 3칸 여백 (45px) */
+    }
+
+    .spacing-3 {
+      margin-top: 45px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content-box">
+
+      <!-- 환영합니다 문구 -->
+      <h1 style="white-space: nowrap;">
+        <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
+        <span style="margin: 0 8px;">환영합니다</span>
+        <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
+      </h1>
+
+      <!-- 팀명 (여백 45px, 폰트 약간 작게) -->
+      <p class="bold spacing-2" style="font-size: 1.1em;">{40대아저씨재롱보러어제서울갔다온30대아저씨} 님!</p>
+
+      <!-- 차량번호와 참가일 -->
+      <p class="bold" style="margin-top: 30px;">차량번호: {05저7845}</p>
+      <p class="bold">참가일: {5월 11일(일)}</p>
+
+      <!-- 안내 문구 -->
+      <p class="spacing-3" style="font-size: 1.1em;">특별히 개방 화장실 위치 올려드립니다^^*</p>
+<!-- 화장실 이미지 삽입 -->
+<img src="{{ url_for('static', filename='images/toilet_map.jpg') }}"
+     alt="화장실 위치 안내"
+     style="max-width: 100%; height: auto; margin-top: 20px; border-radius: 10px;">
+    </div>
+  </div>
+</body>
+</html>
