@@ -50,7 +50,7 @@
     }
 
     .spacing-2 {
-      margin-top: 45px; /* ✅ 3칸 여백 (45px) */
+      margin-top: 45px;
     }
 
     .spacing-3 {
@@ -69,19 +69,18 @@
         <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
       </h1>
 
-      <!-- 팀명 (여백 45px, 폰트 약간 작게) -->
-      <p class="bold spacing-2" style="font-size: 1.1em;">40대아저씨재롱보러<wbr>어제서울갔다온30대아저씨 님!</p>
+      <!-- 팀명 -->
+      <p class="bold spacing-2" style="font-size: 1.1em;">{{ team_name }} 님!</p>
 
       <!-- 차량번호와 참가일 -->
-      <p class="bold" style="margin-top: 30px;">차량번호: 05저7845</p>
-      <p class="bold">참가일: 5월 11일(일)</p>
+      <p class="bold" style="margin-top: 30px;">차량번호: {{ car_number }}</p>
+      <p class="bold">참가일: {{ participation_date }}</p>
 
-      <!-- 안내 문구 -->
+      <!-- 안내 문구 및 이미지 -->
       <p class="spacing-3" style="font-size: 0.9em;">화장실 이슈는 아래 사진을 참고해주세요.</p>
-<!-- 화장실 이미지 삽입 -->
-<img src="{{ url_for('static', filename='images/toilet_map.png') }}"
-     alt="화장실 위치 안내"
-     style="max-width: 100%; height: auto; margin-top: 20px; border-radius: 10px;">
+      <img src="{{ url_for('static', filename='images/toilet_map.png') }}"
+           alt="화장실 위치 안내"
+           style="max-width: 100%; height: auto; margin-top: 20px; border-radius: 10px;">
     </div>
   </div>
 </body>
