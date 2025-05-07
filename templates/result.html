@@ -50,7 +50,7 @@
     }
 
     .spacing-2 {
-      margin-top: 30px;
+      margin-top: 45px; /* ✅ 3칸 여백 (45px) */
     }
 
     .spacing-3 {
@@ -62,21 +62,21 @@
   <div class="container">
     <div class="content-box">
 
-      <!-- 환영합니다 문구 (모바일 최적화된 이모지) -->
+      <!-- 환영합니다 문구 -->
       <h1 style="white-space: nowrap;">
         <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
         <span style="margin: 0 8px;">환영합니다</span>
         <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
       </h1>
 
-      <!-- 팀명 (한 포인트 작게 조정) -->
+      <!-- 팀명 (여백 45px, 폰트 약간 작게) -->
       <p class="bold spacing-2" style="font-size: 1.1em;">{{ team_name }} 님!</p>
 
       <!-- 차량번호와 참가일 -->
       <p class="bold" style="margin-top: 30px;">차량번호: {{ car_number }}</p>
       <p class="bold">참가일: {{ participation_date }}</p>
 
-      <!-- 안내 문구 (한 포인트 작게 조정) -->
+      <!-- 안내 문구 -->
       <p class="spacing-3" style="font-size: 1.1em;">오늘 축제를 멋지게 빛내 주세요!</p>
 
     </div>
