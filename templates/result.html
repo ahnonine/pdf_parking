@@ -8,11 +8,23 @@
         body {
             font-family: 'Arial', sans-serif;
             font-size: 20px;
-            background-color: #ffffff;
+            background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             text-align: center;
             padding: 30px;
             margin: 0;
             color: #333;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.85); /* 반투명 흰색 */
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         img {
@@ -44,22 +56,28 @@
             p {
                 font-size: 1em;
             }
+
+            .content-box {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
+    <div class="content-box">
+        <img src="{{ url_for('static', filename='images/welcome_image.png') }}" alt="Welcome Image">
 
-    <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
-    <p><strong>팀명:</strong> {{ team_name }}</p>
-    <p><strong>참가일:</strong> {{ participation_date }}</p>
+        <h1>🎉 환영합니다, {{ user_name }} 님! 🎉</h1>
+        <p><strong>팀명:</strong> {{ team_name }}</p>
+        <p><strong>참가일:</strong> {{ participation_date }}</p>
 
-    <p style="font-size: 1.5em; font-weight: bold; color: black; margin-top: 20px;">
-        차량번호: {{ car_number }}
-    </p>
+        <p style="font-size: 1.5em; font-weight: bold; color: black; margin-top: 20px;">
+            차량번호: {{ car_number }}
+        </p>
 
-    <p style="margin-top: 40px;">오늘 축제를 멋지게 빛내 주세요!</p>
+        <p style="margin-top: 40px;">오늘 축제를 멋지게 빛내 주세요!</p>
+    </div>
 
 </body>
 </html>
