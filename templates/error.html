@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>오류</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <title>오류</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("{{ url_for('static', filename='images/background_image.png') }}");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: black;
+    }
 
-        .container {
-            max-width: 600px;
-            margin: 10vh auto;
-            background-color: rgba(255, 255, 255, 0.8); /* 반투명 텍스트 박스 */
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            color: #000;
-        }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+    }
 
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
+    .content-box {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 30px 20px;
+      border-radius: 15px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      color: black;
+    }
 
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: black;
+    }
 
-        .button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #a31d1d; /* 붉은색 배경 */
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: black;
+    }
 
-        .button:hover {
-            background-color: #781717; /* 더 진한 붉은색 배경 */
-        }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #a31d1d;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+    }
 
-        @media (max-width: 600px) {
-            .container {
-                margin: 5vh 5vw;
-                padding: 20px;
-            }
+    .button:hover {
+      background-color: #781717;
+    }
 
-            h1 {
-                font-size: 1.5em;
-            }
+    @media (max-width: 600px) {
+      .content-box {
+        padding: 20px;
+      }
 
-            p, .button {
-                font-size: 1em;
-            }
-        }
-    </style>
+      h1 {
+        font-size: 1.5em;
+      }
+
+      p, .button {
+        font-size: 1em;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>🚫 등록된 차량번호가 없습니다.</h1>
-        <p>다시 입력해 주세요.</p>
-        <p>💡 차량번호는 '111가1111'처럼 띄어쓰기 없이 입력해주세요.</p>
-        <a href="/" class="button">돌아가기</a>
+  <div class="container">
+    <div class="content-box">
+      <h1>🚫 등록된 차량번호가 없습니다.</h1>
+      <p>다시 입력해 주세요.</p>
+      <p>💡 차량번호는 '111가1111'처럼 띄어쓰기 없이 입력해주세요.</p>
+      <a href="/" class="button">돌아가기</a>
     </div>
+  </div>
 
 </body>
 </html>
