@@ -27,6 +27,8 @@ def index():
 @app.route('/check', methods=['POST'])
 def check():
     car_number = request.form['car_number'].strip()
+    car_number = request.form['car_number'].strip().replace(' ', '').upper()
+
 
     # 특정 차량번호에 대한 처리
     if car_number == '05저7845':
