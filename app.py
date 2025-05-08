@@ -4,6 +4,22 @@ import pandas as pd
 app = Flask(__name__)
 df = pd.read_csv('data.csv', encoding='utf-8')
 
+@app.route('/parking')
+def parking():
+    return render_template('parking.html')
+
+@app.route('/schedule/sat')
+def schedule_sat():
+    return render_template('schedule_sat.html')
+
+@app.route('/schedule/sun')
+def schedule_sun():
+    return render_template('schedule_sun.html')
+
+@app.route('/schedule/wonderful')
+def schedule_wonderful():
+    return render_template('schedule_wonderful.html')
+
 @app.route('/')
 def index():
     return render_template('index.html')
