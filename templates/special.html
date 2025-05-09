@@ -56,6 +56,16 @@
     .spacing-3 {
       margin-top: 45px;
     }
+
+    .profile-img {
+      width: 30vw;
+      max-width: 150px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin: 0 auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -69,8 +79,11 @@
         <span style="font-size: 0.9em; vertical-align: middle;">🎉</span>
       </h1>
 
-      <!-- 팀명 -->
-      <p class="bold spacing-2" style="font-size: 1.1em;">{{ team_name }} 님!</p>
+      <!-- 프로필 이미지 + 팀명 -->
+      <img src="{{ url_for('static', filename='images/profile.jpg') }}"
+           alt="프로필 이미지"
+           class="profile-img">
+      <p class="bold" style="font-size: 1.1em; margin-top: 10px;">{{ team_name }} 님!</p>
 
       <!-- 차량번호와 참가일 -->
       <p class="bold" style="margin-top: 30px;">차량번호: {{ car_number }}</p>
@@ -81,6 +94,7 @@
       <img src="{{ url_for('static', filename='images/toilet_map.png') }}"
            alt="화장실 위치 안내"
            style="max-width: 100%; height: auto; margin-top: 20px; border-radius: 10px;">
+
     </div>
   </div>
 </body>
