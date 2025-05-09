@@ -91,7 +91,18 @@ button:hover {
   </style>
 </head>
 <body>
-  <div class="cont합장소</a>
+  <div class="container">
+    <div class="content-box">
+      <h1>차량번호 입력🧑🏻‍🚀</h1>
+      <form method="POST" action="/check">
+        <input type="text" name="car_number" placeholder="예: 12가3456" required>
+        <br>
+        <button type="submit">확인</button>
+      </form>
+      <p class="info-text">💡 등록한 차량번호를 입력하고 확인 버튼을 누른 후, 나오는 화면을 주차 안내원에게 보여주세요.</p>
+
+      <div class="extra-buttons">
+        <a href="/parking">🅿️ 주차 및 집합장소</a>
         <a href="/schedule/sat">📋 파워풀 퍼레이드 (토)</a>
         <a href="/schedule/sun">📋 파워풀 퍼레이드 (일)</a>
         <a href="/schedule/wonderful">📋 원더풀 퍼레이드</a>
