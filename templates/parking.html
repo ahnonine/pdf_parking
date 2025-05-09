@@ -20,6 +20,21 @@
             border-radius: 10px;
         }
 
+        .info-box {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .info-box strong {
+            color: #a31d1d;
+        }
+
         a.button {
             margin-top: 30px;
             display: inline-block;
@@ -38,7 +53,23 @@
 <body>
     <h1>🅿️ 주차 및 하역장소 안내</h1>
     <img src="{{ url_for('static', filename='images/parking.png') }}" alt="주차 및 하역장소">
-    <br>
+
+    <div class="info-box">
+        <p><strong>📌 [파워풀 퍼레이드 집합시간]</strong><br>
+        본인 공연 시작 시간 <strong>30분 전까지</strong> 해당 시작 구간(1, 2, 3번 게이트)에서 대기해 주세요.</p>
+
+        <p>※ <strong>음원 확인 및 리허설이 필요한 팀</strong>은 아래 시간에 맞춰 
+        <strong>원더풀 퍼레이드 시작 2시간 전까지</strong> 도착해 주세요.</p>
+
+        <p><strong>🎧 음원 확인 및 리허설 시간</strong><br>
+        5월 10일(토) : 13시 ~ 15시<br>
+        5월 11일(일) : 12시 ~ 14시</p>
+
+        <p><strong>📌 [원더풀 퍼레이드 집합시간]</strong><br>
+        5월 10일(토) : 15시 10분<br>
+        5월 11일(일) : 14시 10분</p>
+    </div>
+
     <a href="/" class="button">돌아가기</a>
 </body>
 </html>
