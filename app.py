@@ -31,7 +31,7 @@ def check():
 
     # 특정 차량번호에 대한 처리
     if car_number == '05저7845':
-        team_name = '코뮤니타스'
+        team_name = '학습능력이 뛰어나고 발표를 잘하나 잘난 척하는 경향이 있는 소년'
         participation_date = '5월 11일(일)'
         return render_template(
             'special.html',
