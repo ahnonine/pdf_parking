@@ -26,7 +26,6 @@ def index():
 
 @app.route('/check', methods=['POST'])
 def check():
-    car_number = request.form['car_number'].strip()
     car_number = request.form['car_number'].strip().replace(' ', '').upper()
 
 
