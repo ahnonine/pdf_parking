@@ -48,43 +48,50 @@
       font-size: 1.1em;
       margin-bottom: 15px;
     }
+    
+button {
+  background-color: #a31d1d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    button {
-      background-color: #a31d1d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
+/* ✅ 호버 시 색상 변경 */
+button:hover {
+  background-color: #781717;
+}
+
+    .info-text {
+      font-size: 0.95em;
+      margin-top: 15px;
+      color: #ddd;
     }
 
-    .link-box {
-      margin-top: 30px;
+    .extra-buttons {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .link-box a {
-      display: block;
-      margin: 10px 0;
+    .extra-buttons a {
+      background-color: #000;
       color: white;
       text-decoration: none;
-      font-size: 1.1em;
+      padding: 8px 15px;
+      border-radius: 5px;
     }
 
-    .link-box a:hover {
-      text-decoration: underline;
+    .extra-buttons a:hover {
+      background-color: #333;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="content-box">
-      <h1>차량번호를 입력하세요</h1>
-      <input type="text" placeholder="예: 12가3456">
-      <button>확인</button>
-
-      <div class="link-box">
-        <a href="/parking">🅿️ 주차 및 집합장소 안내</a>
+  <div class="cont합장소</a>
         <a href="/schedule/sat">📋 파워풀 퍼레이드 (토)</a>
         <a href="/schedule/sun">📋 파워풀 퍼레이드 (일)</a>
         <a href="/schedule/wonderful">📋 원더풀 퍼레이드</a>
